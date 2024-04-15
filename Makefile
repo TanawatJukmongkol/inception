@@ -15,13 +15,13 @@ $(DATA_VOL)/mariadb:
 	@ mkdir -p $(DATA_VOL)/mariadb
 
 up:
-	@ docker compose -f ./srcs/docker-compose.yml up $(DOCKER_FLAGS) --build
+	@ docker-compose -f ./srcs/docker-compose.yml up $(DOCKER_FLAGS) --build
 
 down :
-	@ docker compose -f ./srcs/docker-compose.yml down
+	@ docker-compose -f ./srcs/docker-compose.yml down
 
 mariadb:
-	@ docker run --name mariadb_shell --rm -it --env-file srcs/.env --network inception --entrypoint shell.sh srcs-mariadb
+	@ docker run --name mariadb_shell --rm -it --env-file srcs/.env --network inception --entrypoint shell.sh mariadb
 
 rm-volumes:
 	@ if [ -z "$(shell docker volume ls -q)" ]; then \

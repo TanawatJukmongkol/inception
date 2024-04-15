@@ -3,6 +3,7 @@ services:
   nginx:
     build: ./requirements/nginx
     container_name: nginx
+    image: nginx
     ports:
       - "443:443"
     depends_on:
@@ -25,6 +26,7 @@ services:
         DB_PASSWORD: ${DB_PASSWORD}
         WP_EMAIL: ${WP_EMAIL}
     container_name: wordpress
+    image: wordpress
     volumes:
       - wordpress:/var/www/html
     depends_on:
@@ -36,6 +38,7 @@ services:
   mariadb:
     build: ./requirements/mariadb
     container_name: mariadb
+    image: mariadb
     tty: false
     stdin_open: true
     volumes:
