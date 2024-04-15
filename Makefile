@@ -1,7 +1,7 @@
 include srcs/.env
 export
 
-DOCKER_FLAGS	= -d
+# DOCKER_FLAGS	= -d
 # DOCKER_FLAGS	= --no-deps \
 # 		  --force-recreate \
 # 		  --remove-orphans
