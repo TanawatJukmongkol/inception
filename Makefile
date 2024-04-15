@@ -1,10 +1,10 @@
 include srcs/.env
 export
 
-# DOCKER_FLAGS	= -d
-DOCKER_FLAGS = --no-deps \
-		  --force-recreate \
-		  --remove-orphans
+DOCKER_FLAGS	= -d
+# DOCKER_FLAGS	= --no-deps \
+# 		  --force-recreate \
+# 		  --remove-orphans
 
 all: $(DATA_VOL)/wordpress $(DATA_VOL)/mariadb up
 
